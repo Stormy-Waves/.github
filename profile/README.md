@@ -3,7 +3,7 @@ Stormy Waves is a team that provides infos and tools to the players of [Wutherin
 
 
 ## Our Team:
-- [Emi](https://github.com/eminentglory)
+- [LP4](https://github.com/jessDe)
 - [Shimizu Izumi](https://github.com/shimizu-izumi)
 - [Sova](https://github.com/Silyky)
-- [LP4](https://github.com/jessDe)
+- [Emi](https://github.com/eminentglory)
