@@ -19,7 +19,7 @@ try {
             $logContent = Get-Content $logFilePath
 
             # Search for the specific line in the log content
-            $matchingLine = $logContent | Where-Object { $_ -match "https://web-static.kurogame.net/aki/gacha/index.html#/record?svr_id" } | Select-Object -First 1
+            $matchingLine = $logContent | Where-Object { $_ -like "*https://web-static.kurogame.net/aki/gacha/index.html#/record?svr_id*" } | Select-Object -First 1
 
             # Print the matching line to the console
             if ($matchingLine) {
