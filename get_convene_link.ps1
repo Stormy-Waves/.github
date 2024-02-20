@@ -19,11 +19,15 @@ try {
             $logContent = Get-Content $logFilePath
 
             # Search for the specific line in the log content
-            $matchingLine = $logContent | Where-Object { $_ -like "*https://web-static.kurogame.net/aki/gacha/index.html#/record?svr_id=*" } | Select-Object -First 1
+            $matchingLine = $logContent | Where-Object { $_ -like "*https://web-static.kurogame.net/aki/gacha/index.html#/record?svr_id*" } | Select-Object -First 1
 
-            # Print the matching line to the console
+            # Extract the desired substring
             if ($matchingLine) {
-                Write-Output $matchingLine
+                $startIndex = $matchingLine.IndexOf('"url":"') + '"url":"'.Length
+                $endIndex = $matchingLine.IndexOf('","transparent"', $startIndex)
+                $extractedUrl = $matchingLine.Substring($startIndex, $endIndex - $startIndex)
+
+                Write-Output $extractedUrl
             } else {
                 Write-Output "No matching line found in the log file."
             }
